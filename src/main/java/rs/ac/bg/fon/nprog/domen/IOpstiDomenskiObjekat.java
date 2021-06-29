@@ -13,6 +13,7 @@ import java.util.List;
 /**
  * Interfejs koji predstavlja opsti domenski objekat.
  * @author tamara
+ * @version 1.0
  */
 public interface IOpstiDomenskiObjekat extends Serializable  {
 	/**

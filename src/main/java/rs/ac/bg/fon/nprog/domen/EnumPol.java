@@ -6,9 +6,18 @@
 package rs.ac.bg.fon.nprog.domen;
 
 /**
+ * Klasa koja predstavlja moguce vrednosti pola kao enumeracija.
  *
  * @author tamara
+ * @version 1.0
  */
 public enum EnumPol {
-    MUŠKI, ŽENSKI
+	/**
+	 * Muski pol
+	 */
+    MUŠKI, 
+    /**
+     * Zenski pol
+     */
+    ŽENSKI
 }

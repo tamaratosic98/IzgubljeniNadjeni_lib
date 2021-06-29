@@ -11,16 +11,33 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Klasa koja predstavlja lokaciju gde se nalazi pas ili gde je poslednji put vidjen.
+ * 
+ * Lokacija ima id kao long vrednost i naziv kao String vrednost.
  *
  * @author tamara
+ * @version 1.0
  */
 public class Lokacija implements IOpstiDomenskiObjekat{
+	/**
+	 * lokacijaId kao long vrednost.
+	 */
     private long lokacijaId=-1;
+    /**
+     * Naziv lokacije kao String vrednost.
+     */
     private String naziv;
-
+    /**
+     * Konstruktor koji inicijalizuje objekat i nista vise.
+     */
     public Lokacija() {
     }
-
+    /**
+     * Konstruktor koji inicijalizuje objekat i postavlja vrednosti lokacjaId i naziv na nove vrednosti.
+     * 
+     * @param lokacijaId Id lokacije kao long vrednost.
+     * @param naziv Naziv lokacije kao String vrednost.
+     */
 
     public Lokacija(long lokacijaId, String naziv) {
         this.lokacijaId = lokacijaId;
@@ -28,28 +45,36 @@ public class Lokacija implements IOpstiDomenskiObjekat{
     }
     
     /**
-     * @return the lokacijaId
+     * Vraca id lokacije.
+     * 
+     * @return Id lokacije kao long vrednost.
      */
     public long getLokacijaId() {
         return lokacijaId;
     }
 
     /**
-     * @param lokacijaId the lokacijaId to set
+     * Postavlja id lokacije na novu vrednost.
+     * 
+     * @param Id lokacije kao long vrednost.
      */
     public void setLokacijaId(long lokacijaId) {
         this.lokacijaId = lokacijaId;
     }
 
     /**
-     * @return the naziv
+     * Vraca naziv lokacije
+     * 
+     * @return Naziv lokacije kao String vrednost.
      */
     public String getNaziv() {
         return naziv;
     }
 
     /**
-     * @param naziv the naziv to set
+     * Postavlja naziv lokacije na novu vrednost.
+     * 
+     * @param Naziv lokacije kao String vrednost.
      */
     public void setNaziv(String naziv) {
         this.naziv = naziv;
