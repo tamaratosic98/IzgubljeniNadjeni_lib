@@ -11,20 +11,54 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ * Klasa koja predstavlja korisnika sistema za izgubljene i nadjene pse i implementira interfejs IOpstiDomenskiObjekat
+ * 
+ * Korisnik ima korisnikId kao long i ime, prezime, telefon, email i lozinku kao String vrednosti.
+ * 
  * @author tamara
+ * @version 1.0
  */
 public class Korisnik implements IOpstiDomenskiObjekat{
+	/**
+	 * korisnikId kao long vrednost.
+	 */
     private long korisnikId;
+    /**
+     * Ime korisnika kao String vrednost.
+     */
     private String ime;
+    /**
+     * Prezime korisnika kao String vrednost.
+     */
     private String prezime;
+    /**
+     * Telefon korisnika kao String vrednost.
+     */
     private String telefon;
+    /**
+     * Email korisnika kao String vrednost.
+     */
     private String email;
+    /**
+     * Lozinka korisnika kao String vrednost.
+     */
     private String lozinka;
-    
+    /**
+     * Konstruktor koji inicijalizuje objekat Korisnik i nista vise.
+     */
     public Korisnik() {
         
     }
+    /**
+     * Konstruktor koji inicijalizuje objekat Korisnik i postavlja vrednosti za korisnikId, ime, prezime, telefon, email i lozinku.
+     * 
+     * @param korisnikId korisnikId kao long vrednost.
+     * @param ime Ime korisnika kao String vrednost.
+     * @param prezime Prezime korisnika kao String vrednost.
+     * @param telefon Telefon korisnika kao String vrednost.
+     * @param email Email korisnika kao String vrednost.
+     * @param lozinka Lozinka korisnika kao String vrednost.
+     */
     public Korisnik(long korisnikId, String ime, String prezime, String telefon, String email, String lozinka) {
         this.korisnikId = korisnikId;
         this.ime = ime;
@@ -50,7 +84,6 @@ public class Korisnik implements IOpstiDomenskiObjekat{
 
     @Override
     public String selectWhere() {
-        //email i lozinka razliciti od null
          if(!email.isEmpty() && !lozinka.isEmpty()){
             return " WHERE email='"+email+"' AND lozinka='"+lozinka+"' ";
         }
@@ -99,84 +132,108 @@ public class Korisnik implements IOpstiDomenskiObjekat{
     }
 
     /**
-     * @return the korisnikId
+     * Vraca id korisnika.
+     * 
+     * @return korisnikId kao long vrednost.
      */
     public long getKorisnikId() {
         return korisnikId;
     }
 
     /**
-     * @param korisnikId the korisnikId to set
+     * Postavlja id korisnika na novu vrednost.
+     * 
+     * @param korisnikId kao long vrednost.
      */
     public void setKorisnikId(long korisnikId) {
         this.korisnikId = korisnikId;
     }
 
     /**
-     * @return the ime
+     * Vraca ime korisnika.
+     * 
+     * @return Ime korisnika kao String vrednost.
      */
     public String getIme() {
         return ime;
     }
 
     /**
-     * @param ime the ime to set
+     * Postavlja ime korisnika na novu vrednost.
+     * 
+     * @param Ime korisnika kao String vrednost.
      */
     public void setIme(String ime) {
         this.ime = ime;
     }
 
     /**
-     * @return the prezime
+     * Vraca prezime korisnika.
+     * 
+     * @return Prezime korisnika kao String vrednost.
      */
     public String getPrezime() {
         return prezime;
     }
 
     /**
-     * @param prezime the prezime to set
+     * Postavlja prezime korisnika na novu vrednost.
+     * 
+     * @param Prezime korisnika kao String vrednost.
      */
     public void setPrezime(String prezime) {
         this.prezime = prezime;
     }
 
     /**
-     * @return the telefon
+     * Vraca telefon korisnika.
+     * 
+     * @return Telefon korisnika kao String vrednost.
      */
     public String getTelefon() {
         return telefon;
     }
 
     /**
-     * @param telefon the telefon to set
+     * Postavlja telefon korisnika na novu vrednost.
+     * 
+     * @param Telefon korisnika kao String vrednost.
      */
     public void setTelefon(String telefon) {
         this.telefon = telefon;
     }
 
     /**
-     * @return the email
+     * Vraca email korisnika.
+     * 
+     * @return Email korisnika kao String vrednost.
      */
     public String getEmail() {
         return email;
     }
 
     /**
-     * @param email the email to set
+     * Postavlja email korisnika na novu vrednost.
+     * 
+     * @param Email korisnika kao String vrednost.
      */
     public void setEmail(String email) {
         this.email = email;
     }
 
     /**
-     * @return the lozinka
+     * Vraca lozinku korisnika.
+     * 
+     * @return Lozinka korisnika kao String vrednost.
      */
     public String getLozinka() {
         return lozinka;
     }
 
     /**
-     * @param lozinka the lozinka to set
+     * Postavlja lozinku korisnika na novu vrednost.
+     * 
+     * @param Lozinka korisnika kao String vrednost.
      */
     public void setLozinka(String lozinka) {
         this.lozinka = lozinka;
