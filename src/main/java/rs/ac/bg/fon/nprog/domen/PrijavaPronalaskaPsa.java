@@ -13,26 +13,84 @@ import java.util.List;
 import javax.swing.ImageIcon;
 
 /**
- *
+ * Klasa koja predstavlja prijavu pronalaska psa.
+ * 
+ * Prijava pronalaska psa ima prijavaPronalaskaPsaId kao long vrednost, pol kao Enum vrednost, boju, kontakt nalazaca i opis kao String vrednost,
+ * vremePronalaska kao Date, slikaURL kao ImageIcon, lokacija kao Lokacija, rasa kao Rasa, x i y kao double vrednosti i sacuvaoPronalazak kao Korisnik.
+ * 
  * @author tamara
+ * @version 1.0
  */
 public class PrijavaPronalaskaPsa implements IOpstiDomenskiObjekat {
-    //PrijavaPronalaskaPsaID, pol, boja, vremePronalaska, kontaktNalazaca, slikaURL, rasaID, lokacijaID)
+    /**
+     * Id prijave pronalaska psa kao long vrednost.
+     */
     private long prijavaPronalaskaPsaId=-1;
+    /**
+     * Pol pronadjenog psa kao Enum vrednost.
+     */
     private EnumPol pol;
+    /**
+     * Boja pronadjenog psa kao String vrednost.
+     */
     private String boja;
+    /**
+     * Vreme pronalaska psa kao Date.
+     */
     private Date vremePronalaska;
+    /**
+     * Kontakt pronalazaca psa kao String vrednost.
+     */
     private String  kontaktNalazaca;
+    /**
+     * Slika pronadjenog psa kao ImageIcon.
+     */
     private ImageIcon slikaURL;
+    /**
+     * Rasa pronadjenog psa kao Rasa.
+     */
     private Rasa rasa;
+    /**
+     * Lokacija pronadjenog psa kao Lokacija.
+     */
     private Lokacija lokacija;
+    /**
+     * X koordinata lokacije pronadjenog psa kao double vrednost.
+     */
     private double x;
+    /** 
+     * Y koordinata lokacije pronadjenog psa kao double vrednost.
+     */
     private double y;
+    /**
+     * Opis pronadjenog psa kao String vrednost.
+     */
     private String opis;
-    
+    /**
+     * Korisnik koji je sacuvao prijavu kao Korisnik.
+     */
     private Korisnik sacuvaoPronalazak;
+    
+    /**
+     * Konstruktor koji inicijalizuje objekat i nista vise.
+     */
     public PrijavaPronalaskaPsa() {
     }
+    /**
+     * 
+     * @param prijavaPronalaskaPsaId Id prijave pronalaska psa kao long vrednost.
+     * @param pol Pol pronadjenog psa kao Enum vrednost.
+     * @param boja Boja pronadjenog psa kao String vrednost.
+     * @param vremePronalaska Vreme pronalaska psa kao Date.
+     * @param kontaktNalazaca Kontakt pronalazaca psa kao String vrednost.
+     * @param slikaURL Slika pronadjenog psa kao ImageIcon.
+     * @param rasa Rasa pronadjenog psa kao Rasa.
+     * @param lokacija Lokacija pronadjenog psa kao Lokacija.
+     * @param x X koordinata lokacije pronadjenog psa kao double vrednost.
+     * @param y Y koordinata lokacije pronadjenog psa kao double vrednost.
+     * @param opis Opis pronadjenog psa kao String vrednost.
+     * @param sacuvaoPronalazak Korisnik koji je sacuvao prijavu kao Korisnik.
+     */
 
     public PrijavaPronalaskaPsa(long prijavaPronalaskaPsaId,EnumPol pol, String boja, Date vremePronalaska, String kontaktNalazaca, ImageIcon slikaURL, Rasa rasa, Lokacija lokacija, double x, double y, String opis, Korisnik sacuvaoPronalazak) {
         this.prijavaPronalaskaPsaId=prijavaPronalaskaPsaId;
@@ -53,112 +111,144 @@ public class PrijavaPronalaskaPsa implements IOpstiDomenskiObjekat {
     
 
     /**
-     * @return the prijavaPronalaskaPsaId
+     * Vraca id prijave pronalaska psa.
+     * 
+     * @return Id prijave pronalaska psa kao long vrednost.
      */
     public long getPrijavaPronalaskaPsaId() {
         return prijavaPronalaskaPsaId;
     }
 
     /**
-     * @param prijavaPronalaskaPsaId the prijavaPronalaskaPsaId to set
+     * Postavlja id prijave pronalaska psa na novu vrednost.
+     * 
+     * @param prijavaPronalaskaPsaId Id prijave pronalaska psa kao long vrednost.
      */
     public void setPrijavaPronalaskaPsaId(long prijavaPronalaskaPsaId) {
         this.prijavaPronalaskaPsaId = prijavaPronalaskaPsaId;
     }
 
     /**
-     * @return the pol
+     * Vraca pol pronadjenog psa.
+     * 
+     * @return Pol pronadjenog psa kao Enum vrednost.
      */
     public EnumPol getPol() {
         return pol;
     }
 
     /**
-     * @param pol the pol to set
+     * Postavlja pol pronadjenog psa na novu vrednost.
+     * 
+     * @param pol Pol pronadjenog psa kao Enum vrednost.
      */
     public void setPol(EnumPol pol) {
         this.pol = pol;
     }
 
     /**
-     * @return the boja
+     * Vraca boju pronadjenog psa.
+     * 
+     * @return Boja pronadjenog psa kao String vrednost.
      */
     public String getBoja() {
         return boja;
     }
 
     /**
-     * @param boja the boja to set
+     * Postavlja boju pronadjenog psa na novu vrednost.
+     * 
+     * @param boja Boja pronadjenog psa kao String vrednost.
      */
     public void setBoja(String boja) {
         this.boja = boja;
     }
 
     /**
-     * @return the vremePronalaska
+     * Vraca vreme pronalaska psa.
+     * 
+     * @return Vreme pronalaska psa kao Date.
      */
     public Date getVremePronalaska() {
         return vremePronalaska;
     }
 
     /**
-     * @param vremePronalaska the vremePronalaska to set
+     * Postavlja vreme pronalaska psa na novu vrednost.
+     * 
+     * @param vremePronalaska Vreme pronalaska psa kao Date.
      */
     public void setVremePronalaska(Date vremePronalaska) {
         this.vremePronalaska = vremePronalaska;
     }
 
     /**
-     * @return the kontaktNalazaca
+     * Vraca kontakt pronalazaca psa.
+     * 
+     * @return Kontakt pronalazaca psa kao String vrednost.
      */
     public String getKontaktNalazaca() {
         return kontaktNalazaca;
     }
 
     /**
-     * @param kontaktNalazaca the kontaktNalazaca to set
+     * Postavlja kontakt pronalazaca na novu vrednost.
+     * 
+     * @param kontaktNalazaca Kontakt pronalazaca psa kao String vrednost.
      */
     public void setKontaktNalazaca(String kontaktNalazaca) {
         this.kontaktNalazaca = kontaktNalazaca;
     }
 
     /**
-     * @return the slikaURL
+     * Vraca sliku pronadjenog psa.
+     * 
+     * @return Slika pronadjenog psa kao ImageIcon.
      */
     public ImageIcon getSlikaURL() {
         return slikaURL;
     }
 
     /**
-     * @param slikaURL the slikaURL to set
+     * Postavlja sliku pronadjenog psa na novu vrednost.
+     * 
+     * @param slikaURL Slika pronadjenog psa kao ImageIcon.
      */
     public void setSlikaURL(ImageIcon slikaURL) {
         this.slikaURL = slikaURL;
     }
 
     /**
-     * @return the rasa
+     * Vraca rasu pronadjenog psa.
+     * 
+     * @return Rasa pronadjenog psa kao Rasa.
      */
     public Rasa getRasa() {
         return rasa;
     }
 
     /**
-     * @param rasa the rasa to set
+     * Postavlja rasu pronadjenog psa na novu vrednost.
+     * 
+     * @param rasa Rasa pronadjenog psa kao Rasa.
      */
     public void setRasa(Rasa rasa) {
         this.rasa = rasa;
     }
 
     /**
-     * @return the lokacija
+     * Vraca lokaciju pronadjenog psa.
+     * 
+     * @return Lokacija pronadjenog psa kao Lokacija.
      */
     public Lokacija getLokacija() {
         return lokacija;
     }
 
     /**
-     * @param lokacija the lokacija to set
+     * Postavlja lokaciju pronadjenog psa na novu vrednost.
+     * 
+     * @param lokacija Lokacija pronadjenog psa kao Lokacija.
      */
     public void setLokacija(Lokacija lokacija) {
         this.lokacija = lokacija;
@@ -309,56 +399,72 @@ public class PrijavaPronalaskaPsa implements IOpstiDomenskiObjekat {
     }
 
     /**
-     * @return the x
+     * Vraca x koordinatu lokacije pronadjenog psa.
+     * 
+     * @return X koordinata lokacije pronadjenog psa kao double vrednost.
      */
     public double getX() {
         return x;
     }
 
     /**
-     * @param x the x to set
+     * Postavlja x koordinatu lokacije pronadjenog psa na novu vrednost.
+     * 
+     * @param x X koordinata lokacije pronadjenog psa kao double vrednost.
      */
     public void setX(double x) {
         this.x = x;
     }
 
     /**
-     * @return the y
+     * Vraca y koordinatu lokacije pronadjnog psa.
+     * 
+     * @return Y koordinata lokacije pronadjenog psa kao double vrednost.
      */
     public double getY() {
         return y;
     }
 
     /**
-     * @param y the y to set
+     * Postavlja y koordinatu lokacije pronadjnog psa na novu vrednost.
+     * 
+     * @param y Y koordinata lokacije pronadjenog psa kao double vrednost.
      */
     public void setY(double y) {
         this.y = y;
     }
 
     /**
-     * @return the opis
+     * Vraca opis pronadjenog psa.
+     * 
+     * @return Opis pronadjenog psa kao String vrednost.
      */
     public String getOpis() {
         return opis;
     }
 
     /**
-     * @param opis the opis to set
+     * Postavlja opis pronadjenog psa na novu vrednost.
+     * 
+     * @param opis Opis pronadjenog psa kao String vrednost.
      */
     public void setOpis(String opis) {
         this.opis = opis;
     }
 
     /**
-     * @return the sacuvaoPronalazak
+     * Vraca korisnika koji je sacuvao prijavu.
+     * 
+     * @return Korisnik koji je sacuvao prijavu kao Korisnik.
      */
     public Korisnik getSacuvaoPronalazak() {
         return sacuvaoPronalazak;
     }
 
     /**
-     * @param sacuvaoPronalazak the sacuvaoPronalazak to set
+     * Postavlja korisnika koji je sacuvao prijavu na novu vrednost.
+     * 
+     * @param sacuvaoPronalazak Korisnik koji je sacuvao prijavu kao Korisnik.
      */
     public void setSacuvaoPronalazak(Korisnik sacuvaoPronalazak) {
         this.sacuvaoPronalazak = sacuvaoPronalazak;

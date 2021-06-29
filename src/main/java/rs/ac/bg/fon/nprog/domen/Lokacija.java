@@ -56,7 +56,7 @@ public class Lokacija implements IOpstiDomenskiObjekat{
     /**
      * Postavlja id lokacije na novu vrednost.
      * 
-     * @param Id lokacije kao long vrednost.
+     * @param lokacijaId Id lokacije kao long vrednost.
      */
     public void setLokacijaId(long lokacijaId) {
         this.lokacijaId = lokacijaId;
@@ -74,7 +74,7 @@ public class Lokacija implements IOpstiDomenskiObjekat{
     /**
      * Postavlja naziv lokacije na novu vrednost.
      * 
-     * @param Naziv lokacije kao String vrednost.
+     * @param naziv Naziv lokacije kao String vrednost.
      */
     public void setNaziv(String naziv) {
         this.naziv = naziv;
