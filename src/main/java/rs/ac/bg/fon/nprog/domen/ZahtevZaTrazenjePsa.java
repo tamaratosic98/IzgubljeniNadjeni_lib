@@ -13,31 +13,92 @@ import java.util.List;
 import javax.swing.ImageIcon;
 
 /**
+ * Klasa koja predstavlja zahtev za trazenje izgubljenog psa.
+ * 
+ * Zahtev za trazenje izgubljenog psa ima zahtevZaTrazenjePsaId kao long vrednost, pol kao Enum vrednost, boju, kontaktVlasnika, ime i opis kao String vrednost,
+ * vremeNestanka kao Date, slikaURL kao ImageIcon, lokacija kao Lokacija, rasa kao Rasa, x i y kao double vrednosti, sacuvaoZahtev kao Korisnik i starost kao int vrednost.
  *
  * @author tamara
  */
 public class ZahtevZaTrazenjePsa implements IOpstiDomenskiObjekat{
+	/**
+	 * Id zahteva za trazenje psa kao long vrednost.
+	 */
     private long zahtevZaTrazenjePsaId=-1;
+    /**
+     * Pol izgubljenog psa kao Enum vrednost.
+     */
     private EnumPol pol;
+    /**
+     * Boja izgubljenog psa kao String vrednost.
+     */
     private String boja;
+    /**
+     * Vreme nestanka psa kao Date.
+     */
     private Date vremeNestanka;
+    /**
+     * Kontakt vlasnika psa kao String vrednost.
+     */
     private String kontaktVlasnika;
+    /**
+     * Slika izgubljenog psa kao ImageIcon.
+     */
     private ImageIcon slikaURL;
+    /**
+     * Starost izgubljenog psa kao int vrednost.
+     */
     private int starost;
+    /**
+     * Ime izgubljenog psa kao String vrednost.
+     */
     private String ime;
+    /**
+     * Rasa izgubljenog psa kao Rasa.
+     */
     private Rasa rasa;
+    /**
+     * Lokacija izgubljenog psa kao Lokacija.
+     */
     private Lokacija lokacija;
-    
-    
+    /**
+     * X koordinata lokacije izgubljenog psa kao double vrednost.
+     */
     private double x;
+    /**
+     * Y koordinata lokacije izgubljenog psa kao double vrednost.
+     */
     private double y;
+    /**
+     * Opis izgubljenog psa kao String vrednost.
+     */
     private String opis;
-    
+    /**
+     * Korisnik koji je sacuvao zahtev kao Korisnik.
+     */
     private Korisnik sacuvaoZahtev;
-
+    /**
+     * Konstruktor koji inicijalizuje objekat i nista vise.
+     */
     public ZahtevZaTrazenjePsa() {
     }
-
+    /**
+     * 
+     * @param zahtevZaTrazenjePsaId Id zahteva za trazenje psa kao long vrednost.
+     * @param pol Pol izgubljenog psa kao Enum vrednost.
+     * @param boja Boja izgubljenog psa kao String vrednost.
+     * @param vremeNestanka Vreme nestanka psa kao Date.
+     * @param kontaktVlasnika Kontakt vlasnika psa kao String vrednost.
+     * @param slikaURL Slika izgubljenog psa kao ImageIcon.
+     * @param starost Starost izgubljenog psa kao int vrednost.
+     * @param ime Ime izgubljenog psa kao String vrednost.
+     * @param rasa Rasa izgubljenog psa kao Rasa.
+     * @param lokacija Lokacija izgubljenog psa kao Lokacija.
+     * @param x X koordinata lokacije izgubljenog psa kao double vrednost.
+     * @param y Y koordinata lokacije izgubljenog psa kao double vrednost.
+     * @param opis Opis izgubljenog psa kao String vrednost.
+     * @param sacuvaoZahtev Korisnik koji je sacuvao zahtev kao Korisnik.
+     */
     public ZahtevZaTrazenjePsa(long zahtevZaTrazenjePsaId,EnumPol pol, String boja, Date vremeNestanka, String kontaktVlasnika, ImageIcon slikaURL, int starost, String ime, Rasa rasa, Lokacija lokacija, double x, double y, String opis, Korisnik sacuvaoZahtev) {
         this.zahtevZaTrazenjePsaId=zahtevZaTrazenjePsaId;
         this.pol = pol;
@@ -59,140 +120,180 @@ public class ZahtevZaTrazenjePsa implements IOpstiDomenskiObjekat{
     
     
     /**
-     * @return the zahtevZaTrazenjePsaId
+     * Vraca Id zahteva za trazenje psa.
+     * 
+     * @return Id zahteva za trazenje psa kao long vrednost.
      */
     public long getZahtevZaTrazenjePsaId() {
         return zahtevZaTrazenjePsaId;
     }
 
     /**
-     * @param zahtevZaTrazenjePsaId the zahtevZaTrazenjePsaId to set
+     * Postavlja Id zahteva za trazenje psa na novu vrednost.
+     * 
+     * @param zahtevZaTrazenjePsaId Id zahteva za trazenje psa kao long vrednost.
      */
     public void setZahtevZaTrazenjePsaId(long zahtevZaTrazenjePsaId) {
         this.zahtevZaTrazenjePsaId = zahtevZaTrazenjePsaId;
     }
 
     /**
-     * @return the pol
+     * Vraca pol izgubljenog psa.
+     * 
+     * @return Pol izgubljenog psa kao Enum vrednost.
      */
     public EnumPol getPol() {
         return pol;
     }
 
     /**
-     * @param pol the pol to set
+     * Postavlja pol izgubljenog psa na novu vrednost.
+     * 
+     * @param pol Pol izgubljenog psa kao Enum vrednost.
      */
     public void setPol(EnumPol pol) {
         this.pol = pol;
     }
 
     /**
-     * @return the boja
+     * Vraca boju izgubljenog psa.
+     * 
+     * @return Boja izgubljenog psa kao String vrednost.
      */
     public String getBoja() {
         return boja;
     }
 
     /**
-     * @param boja the boja to set
+     * Postavlja boju izgubljenog psa na novu vrednost.
+     * 
+     * @param boja Boja izgubljenog psa kao String vrednost.
      */
     public void setBoja(String boja) {
         this.boja = boja;
     }
 
     /**
-     * @return the vremeNestanka
+     * Vraca vreme nestanka psa.
+     * 
+     * @return Vreme nestanka psa kao Date.
      */
     public Date getVremeNestanka() {
         return vremeNestanka;
     }
 
     /**
-     * @param vremeNestanka the vremeNestanka to set
+     * Postavlja vreme nestanka psa na novu vrednost.
+     * 
+     * @param vremeNestanka Vreme nestanka psa kao Date.
      */
     public void setVremeNestanka(Date vremeNestanka) {
         this.vremeNestanka = vremeNestanka;
     }
 
     /**
-     * @return the kontaktVlasnika
+     * Vraca kontakt vlasnika izgubljenog psa.
+     * 
+     * @return Kontakt vlasnika psa kao String vrednost.
      */
     public String getKontaktVlasnika() {
         return kontaktVlasnika;
     }
 
     /**
-     * @param kontaktVlasnika the kontaktVlasnika to set
+     * Postavlja kontakt vlasnika izgubljenog psa na novu vrednost.
+     * 
+     * @param kontaktVlasnika Kontakt vlasnika psa kao String vrednost.
      */
     public void setKontaktVlasnika(String kontaktVlasnika) {
         this.kontaktVlasnika = kontaktVlasnika;
     }
 
     /**
-     * @return the slikaURL
+     * Vraca sliku izgubljenog psa.
+     * 
+     * @return Slika izgubljenog psa kao ImageIcon.
      */
     public ImageIcon getSlikaURL() {
         return slikaURL;
     }
 
     /**
-     * @param slikaURL the slikaURL to set
+     * Postavlja sliku izgubljenog psa na novu vrednost.
+     * 
+     * @param slikaURL Slika izgubljenog psa kao ImageIcon.
      */
     public void setSlikaURL(ImageIcon slikaURL) {
         this.slikaURL = slikaURL;
     }
 
     /**
-     * @return the starost
+     * Vraca starost izgubljenog psa.
+     * 
+     * @return Starost izgubljenog psa kao int vrednost.
      */
     public int getStarost() {
         return starost;
     }
 
     /**
-     * @param starost the starost to set
+     * Postavlja starost izgubljenog psa na novu vrednost.
+     * 
+     * @param starost Starost izgubljenog psa kao int vrednost.
      */
     public void setStarost(int starost) {
         this.starost = starost;
     }
 
     /**
-     * @return the ime
+     * Vraca ime izgubljenog psa.
+     * 
+     * @return Ime izgubljenog psa kao String vrednost.
      */
     public String getIme() {
         return ime;
     }
 
     /**
-     * @param ime the ime to set
+     * Postavlja ime izgubljenog psa na novu vrednost.
+     * 
+     * @param ime Ime izgubljenog psa kao String vrednost.
      */
     public void setIme(String ime) {
         this.ime = ime;
     }
 
     /**
-     * @return the rasa
+     * Vraca rasu izgubljenog psa.
+     * 
+     * @return Rasa izgubljenog psa kao Rasa.
      */
     public Rasa getRasa() {
         return rasa;
     }
 
     /**
-     * @param rasa the rasa to set
+     * Postavlja rasu izgubljenog psa na novu vrednost.
+     * 
+     * @param rasa Rasa izgubljenog psa kao Rasa.
      */
     public void setRasa(Rasa rasa) {
         this.rasa = rasa;
     }
 
     /**
-     * @return the lokacija
+     * Vraca lokaciju izgubljenog psa.
+     * 
+     * @return Lokacija izgubljenog psa kao Lokacija.
      */
     public Lokacija getLokacija() {
         return lokacija;
     }
 
     /**
-     * @param lokacija the lokacija to set
+     * Postavlja lokaciju izgubljeno psa na novu vrednost.
+     * 
+     * @param lokacija Lokacija izgubljenog psa kao Lokacija.
      */
     public void setLokacija(Lokacija lokacija) {
         this.lokacija = lokacija;
@@ -346,56 +447,72 @@ public class ZahtevZaTrazenjePsa implements IOpstiDomenskiObjekat{
     }
 
     /**
-     * @return the x
+     * Vraca x koordinatu lokacije izgubljenog psa.
+     * 
+     * @return X koordinata lokacije izgubljenog psa kao double vrednost.
      */
     public double getX() {
         return x;
     }
 
     /**
-     * @param x the x to set
+     * Postavlja x koordinatu lokacije izgubljenog psa na novu vrednost.
+     * 
+     * @param x X koordinata lokacije izgubljenog psa kao double vrednost.
      */
     public void setX(double x) {
         this.x = x;
     }
 
     /**
-     * @return the y
+     * Vraca y koordinatu lokacije izgubljenog psa.
+     * 
+     * @return Y koordinata lokacije izgubljenog psa kao double vrednost.
      */
     public double getY() {
         return y;
     }
 
     /**
-     * @param y the y to set
+     * Postavlja y koordinatu lokacije izgubljenog psa na novu vrednost.
+     * 
+     * @param y Y koordinata lokacije izgubljenog psa kao double vrednost.
      */
     public void setY(double y) {
         this.y = y;
     }
 
     /**
-     * @return the opis
+     * Vraca opis izgubljenog psa.
+     * 
+     * @return Opis izgubljenog psa kao String vrednost.
      */
     public String getOpis() {
         return opis;
     }
 
     /**
-     * @param opis the opis to set
+     * Postavlja opis izgubljenog psa na novu vrednost.
+     * 
+     * @param opis Opis izgubljenog psa kao String vrednost.
      */
     public void setOpis(String opis) {
         this.opis = opis;
     }
 
     /**
-     * @return the sacuvaoZahtev
+     * Vraca korisnika koji je sacuvao zahtev.
+     * 
+     * @return Korisnik koji je sacuvao zahtev kao Korisnik.
      */
     public Korisnik getSacuvaoZahtev() {
         return sacuvaoZahtev;
     }
 
     /**
-     * @param sacuvaoZahtev the sacuvaoZahtev to set
+     * Postavlja korisnika koji je sacuvao zahtev na novu vrednost.
+     * 
+     * @param sacuvaoZahtev Korisnik koji je sacuvao zahtev kao Korisnik.
      */
     public void setSacuvaoZahtev(Korisnik sacuvaoZahtev) {
         this.sacuvaoZahtev = sacuvaoZahtev;
