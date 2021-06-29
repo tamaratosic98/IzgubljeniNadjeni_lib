@@ -14,17 +14,45 @@ import java.util.Objects;
 import javax.swing.ImageIcon;
 
 /**
+ * Klasa koja predstavlja resen slucaj izgubljenog psa.
+ * 
+ * Pronalazak ima prijavaPronalaskaPsa kao PrijavaPronalaskaPsa, zahtevZaTrazenjePsa kao ZahtevZaTrazenjePsa,
+ * datumResavanjaSlucaja kao Date i napomena kao String vrednost.
  *
  * @author tamara
+ * @version 1.0
  */
 public class Pronalazak implements IOpstiDomenskiObjekat {
+	/**
+	 * Prijava pronalaska psa kao PrijavaPronalaskaPsa.
+	 */
     private PrijavaPronalaskaPsa prijavaPronalaskaPsa;
+    /**
+     * Zahtev za trazenje psa kao ZahtevZaTrazenjePsa.
+     */
     private ZahtevZaTrazenjePsa zahtevZaTrazenjePsa;
+    /**
+     * Datum resavanja slucaja kao Date.
+     */
     private Date datumResavanjaSlucaja;
+    /**
+     * Napomena kao String vrednost.
+     */
     private String napomena;
+    /**
+     * Konstruktor koji inicijalizuje objekat i nista vise.
+     */
 
     public Pronalazak() {
     }
+    /**
+     * Konstruktor koji inicijalizuje objekat i postavlja vrednosti prijavaPronalaskaPsa, zahtevZaTrazenjePsa, datumResavanjaSlucaja i napomena na nove vrednosti.
+     * 
+     * @param prijavaPronalaskaPsa Prijava pronalaska psa kao PrijavaPronalaskaPsa.
+     * @param zahtevZaTrazenjePsa Zahtev za trazenje psa kao ZahtevZaTrazenjePsa.
+     * @param datumResavanjaSlucaja Datum resavanja slucaja kao Date.
+     * @param napomena Napomena kao String vrednost.
+     */
 
     public Pronalazak(PrijavaPronalaskaPsa prijavaPronalaskaPsa, ZahtevZaTrazenjePsa zahtevZaTrazenjePsa, Date datumResavanjaSlucaja, String napomena) {
         this.prijavaPronalaskaPsa = prijavaPronalaskaPsa;
@@ -34,56 +62,72 @@ public class Pronalazak implements IOpstiDomenskiObjekat {
     }
 
     /**
-     * @return the prijavaPronalaskaPsa
+     * Vraca prijavu pronalaska psa.
+     * 
+     * @return Prijava pronalaska psa kao PrijavaPronalaskaPsa.
      */
     public PrijavaPronalaskaPsa getPrijavaPronalaskaPsa() {
         return prijavaPronalaskaPsa;
     }
 
     /**
-     * @param prijavaPronalaskaPsa the prijavaPronalaskaPsa to set
+     * Postavlja prijavu pronalaska psa na novu vrednost.
+     * 
+     * @param prijavaPronalaskaPsa Prijava pronalaska psa kao PrijavaPronalaskaPsa.
      */
     public void setPrijavaPronalaskaPsa(PrijavaPronalaskaPsa prijavaPronalaskaPsa) {
         this.prijavaPronalaskaPsa = prijavaPronalaskaPsa;
     }
 
     /**
-     * @return the zahtevZaTrazenjePsa
+     * Vraca zahtev za trazenje psa.
+     * 
+     * @return Zahtev za trazenje psa kao ZahtevZaTrazenjePsa.
      */
     public ZahtevZaTrazenjePsa getZahtevZaTrazenjePsa() {
         return zahtevZaTrazenjePsa;
     }
 
     /**
-     * @param zahtevZaTrazenjePsa the zahtevZaTrazenjePsa to set
+     * Postavlja zahtev za trazenje psa na novu vrednost.
+     * 
+     * @param zahtevZaTrazenjePsa Zahtev za trazenje psa kao ZahtevZaTrazenjePsa.
      */
     public void setZahtevZaTrazenjePsa(ZahtevZaTrazenjePsa zahtevZaTrazenjePsa) {
         this.zahtevZaTrazenjePsa = zahtevZaTrazenjePsa;
     }
 
     /**
-     * @return the datumResavanjaSlucaja
+     * Vraca datum resavanja slucaja.
+     * 
+     * @return Datum resavanja slucaja kao Date.
      */
     public Date getDatumResavanjaSlucaja() {
         return datumResavanjaSlucaja;
     }
 
     /**
-     * @param datumResavanjaSlucaja the datumResavanjaSlucaja to set
+     * Postavlja datum resavanja slucaja na novu vrednost.
+     * 
+     * @param datumResavanjaSlucaja Datum resavanja slucaja kao Date.
      */
     public void setDatumResavanjaSlucaja(Date datumResavanjaSlucaja) {
         this.datumResavanjaSlucaja = datumResavanjaSlucaja;
     }
 
     /**
-     * @return the napomena
+     * Vraca napomenu.
+     * 
+     * @return  Napomena kao String vrednost.
      */
     public String getNapomena() {
         return napomena;
     }
 
     /**
-     * @param napomena the napomena to set
+     * Postavlja napomenu na novu vrednost.
+     * 
+     * @param napomena  Napomena kao String vrednost.
      */
     public void setNapomena(String napomena) {
         this.napomena = napomena;
