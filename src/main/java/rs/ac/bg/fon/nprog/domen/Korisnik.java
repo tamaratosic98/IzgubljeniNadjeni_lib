@@ -143,7 +143,7 @@ public class Korisnik implements IOpstiDomenskiObjekat{
     /**
      * Postavlja id korisnika na novu vrednost.
      * 
-     * @param korisnikId kao long vrednost.
+     * @param korisnikId korisnikId kao long vrednost.
      */
     public void setKorisnikId(long korisnikId) {
         this.korisnikId = korisnikId;
@@ -161,7 +161,7 @@ public class Korisnik implements IOpstiDomenskiObjekat{
     /**
      * Postavlja ime korisnika na novu vrednost.
      * 
-     * @param Ime korisnika kao String vrednost.
+     * @param ime Ime korisnika kao String vrednost.
      */
     public void setIme(String ime) {
         this.ime = ime;
@@ -179,7 +179,7 @@ public class Korisnik implements IOpstiDomenskiObjekat{
     /**
      * Postavlja prezime korisnika na novu vrednost.
      * 
-     * @param Prezime korisnika kao String vrednost.
+     * @param prezime Prezime korisnika kao String vrednost.
      */
     public void setPrezime(String prezime) {
         this.prezime = prezime;
@@ -197,7 +197,7 @@ public class Korisnik implements IOpstiDomenskiObjekat{
     /**
      * Postavlja telefon korisnika na novu vrednost.
      * 
-     * @param Telefon korisnika kao String vrednost.
+     * @param telefon Telefon korisnika kao String vrednost.
      */
     public void setTelefon(String telefon) {
         this.telefon = telefon;
@@ -215,7 +215,7 @@ public class Korisnik implements IOpstiDomenskiObjekat{
     /**
      * Postavlja email korisnika na novu vrednost.
      * 
-     * @param Email korisnika kao String vrednost.
+     * @param email Email korisnika kao String vrednost.
      */
     public void setEmail(String email) {
         this.email = email;
@@ -233,7 +233,7 @@ public class Korisnik implements IOpstiDomenskiObjekat{
     /**
      * Postavlja lozinku korisnika na novu vrednost.
      * 
-     * @param Lozinka korisnika kao String vrednost.
+     * @param lozinka Lozinka korisnika kao String vrednost.
      */
     public void setLozinka(String lozinka) {
         this.lozinka = lozinka;

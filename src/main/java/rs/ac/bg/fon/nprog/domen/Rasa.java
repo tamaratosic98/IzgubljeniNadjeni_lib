@@ -11,17 +11,38 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Klasa koja predstavlja rasu psa.
+ * 
+ * Rasa ima rasaId kao long i naziv i slikaURL kao String vrednosti.
  *
  * @author tamara
+ * @version 1.0
  */
 public class Rasa implements IOpstiDomenskiObjekat{
+	/**
+	 * Id rase kao long vrednost.
+	 */
     private long rasaId=-1;
+    /**
+     * Naziv rase kao String vrednost.
+     */
     private String naziv;
+    /**
+     * Slika rase kao String vrednost.
+     */
     private String slikaURL;
-
+    /**
+     * Konstruktor koji inicijalizuje objekat i nista vise.
+     */
     public Rasa() {
     }
-
+    /**
+     * Konstruktor koji inicijalizuje objekat i postavlja vrednosti rasaId, naziv i slikaURL na nove vrednosti.
+     * 
+     * @param rasaId Id rase kao long vrednost.
+     * @param naziv Naziv rase kao String vrednost.
+     * @param slikaURL Slika rase kao String vrednost.
+     */
     public Rasa(long rasaId, String naziv, String slikaURL) {
         this.rasaId = rasaId;
         this.naziv = naziv;
@@ -29,42 +50,54 @@ public class Rasa implements IOpstiDomenskiObjekat{
     }
 
     /**
-     * @return the rasaId
+     * Vraca id rase.
+     * 
+     * @return Id rase kao long vrednost.
      */
     public long getRasaId() {
         return rasaId;
     }
 
     /**
-     * @param rasaId the rasaId to set
+     * Postavlja id rase na novu vrednost.
+     * 
+     * @param rasaId Id rase kao long vrednost.
      */
     public void setRasaId(long rasaId) {
         this.rasaId = rasaId;
     }
 
     /**
-     * @return the naziv
+     * Vraca naziv rase.
+     * 
+     * @return Naziv rase kao String vrednost.
      */
     public String getNaziv() {
         return naziv;
     }
 
     /**
-     * @param naziv the naziv to set
+     * Postavlja naziv rase na novu vrednost.
+     * 
+     * @param naziv Naziv rase kao String vrednost.
      */
     public void setNaziv(String naziv) {
         this.naziv = naziv;
     }
 
     /**
-     * @return the slikaURL
+     * Vraca sliku rase.
+     * 
+     * @return Slika rase kao String vrednost.
      */
     public String getSlikaURL() {
         return slikaURL;
     }
 
     /**
-     * @param slikaURL the slikaURL to set
+     * Postavlja sliku rase na novu vrednost.
+     * 
+     * @param slikaURL Slika rase kao String vrednost.
      */
     public void setSlikaURL(String slikaURL) {
         this.slikaURL = slikaURL;

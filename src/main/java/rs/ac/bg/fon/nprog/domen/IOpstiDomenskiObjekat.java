@@ -48,7 +48,7 @@ public interface IOpstiDomenskiObjekat extends Serializable  {
      * Vraca listu domenskih objekata iz baze kao rezultat prethodno postavljenog upita.
      * 
      * @param rs Podaci iz baze kao ResultSet vrednost.
-     * @return List<IOpstiDomenskiObjekat> kao List<IOpstiDomenskiObjekat>
+     * @return Lista domenskih objekata kao Lista.
      * @throws SQLException ako je rs null.
      */
     
