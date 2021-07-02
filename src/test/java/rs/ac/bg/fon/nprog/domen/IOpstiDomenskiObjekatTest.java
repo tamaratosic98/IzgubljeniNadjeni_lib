@@ -1,21 +1,20 @@
 package rs.ac.bg.fon.nprog.domen;
 
-import static org.junit.Assert.*;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
-
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import static org.mockito.Mockito.*;
 
-public class IOpstiDomenskiObjekatTest {
-	protected IOpstiDomenskiObjekat opstiDomenskiObjekat;
+public abstract class IOpstiDomenskiObjekatTest {
+	public IOpstiDomenskiObjekat opstiDomenskiObjekat;
 
 	@Test
 	public void testNazivTabele() {

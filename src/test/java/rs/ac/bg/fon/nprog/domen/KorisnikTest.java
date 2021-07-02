@@ -1,21 +1,20 @@
 package rs.ac.bg.fon.nprog.domen;
 
-import static org.junit.Assert.*;
-
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class KorisnikTest extends IOpstiDomenskiObjekatTest {
 	public Korisnik k;
 
-	@Before
+	@BeforeEach
 	public void setUp() throws Exception {
 		opstiDomenskiObjekat = new Korisnik(123, "Tamara", "Tosic", "123456","tamara@test.com","lozinka");
 		k=new Korisnik();
 	}
 
-	@After
+	@AfterEach
 	public void tearDown() throws Exception {
 		opstiDomenskiObjekat=null;
 		k=null;
@@ -77,6 +76,49 @@ public class KorisnikTest extends IOpstiDomenskiObjekatTest {
 		assertEquals("lozinka", k.getLozinka());
 
 	}
+	@Test
+	public void testSetEmailNotNull() {
+		assertThrows(java.lang.NullPointerException.class, ()->k.setEmail(null));
+	}
+	@Test
+	public void testSetEmailNotEmpty() {
+		assertThrows(java.lang.RuntimeException.class, ()->k.setEmail(""));
+	}
 	
+	@Test
+	public void testSetLozinkaNotNull() {
+		assertThrows(java.lang.NullPointerException.class, ()->k.setLozinka(null));
+	}
+	@Test
+	public void testSetLozinkaNotEmpty() {
+		assertThrows(java.lang.RuntimeException.class, ()->k.setLozinka(""));
+	}
+	
+	@Test
+	public void testSetImeNotNull() {
+		assertThrows(java.lang.NullPointerException.class, ()->k.setIme(null));
+	}
+	@Test
+	public void testSetImeNotEmpty() {
+		assertThrows(java.lang.RuntimeException.class, ()->k.setIme(""));
+	}
+	
+	@Test
+	public void testSetPrezimeNotNull() {
+		assertThrows(java.lang.NullPointerException.class, ()->k.setPrezime(null));
+	}
+	@Test
+	public void testSetPrezimeNotEmpty() {
+		assertThrows(java.lang.RuntimeException.class, ()->k.setPrezime(""));
+	}
+	
+	@Test
+	public void testSetTelefonNotNull() {
+		assertThrows(java.lang.NullPointerException.class, ()->k.setTelefon(null));
+	}
+	@Test
+	public void testSetTelefonNotEmpty() {
+		assertThrows(java.lang.RuntimeException.class, ()->k.setTelefon(""));
+	}
 
 }
