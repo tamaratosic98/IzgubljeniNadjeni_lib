@@ -82,6 +82,9 @@ public class Rasa implements IOpstiDomenskiObjekat{
      * @param naziv Naziv rase kao String vrednost.
      */
     public void setNaziv(String naziv) {
+    	if(naziv.length() <= 1) {
+    		throw new RuntimeException("Naziv ne sme imati 1 znak ili manje.");
+    	}
         this.naziv = naziv;
     }
 
