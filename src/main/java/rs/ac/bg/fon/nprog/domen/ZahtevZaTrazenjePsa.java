@@ -143,6 +143,7 @@ public class ZahtevZaTrazenjePsa implements IOpstiDomenskiObjekat{
      * @return Pol izgubljenog psa kao Enum vrednost.
      */
     public EnumPol getPol() {
+    	
         return pol;
     }
 
@@ -152,6 +153,9 @@ public class ZahtevZaTrazenjePsa implements IOpstiDomenskiObjekat{
      * @param pol Pol izgubljenog psa kao Enum vrednost.
      */
     public void setPol(EnumPol pol) {
+    	if(pol==null) {
+    		throw new NullPointerException("Pol ne sme biti null.");
+    	}
         this.pol = pol;
     }
 
@@ -188,6 +192,9 @@ public class ZahtevZaTrazenjePsa implements IOpstiDomenskiObjekat{
      * @param vremeNestanka Vreme nestanka psa kao Date.
      */
     public void setVremeNestanka(Date vremeNestanka) {
+    	if(vremeNestanka==null) {
+    		throw new NullPointerException("Vreme nestanka ne sme biti null.");
+    	}
         this.vremeNestanka = vremeNestanka;
     }
 
@@ -206,6 +213,9 @@ public class ZahtevZaTrazenjePsa implements IOpstiDomenskiObjekat{
      * @param kontaktVlasnika Kontakt vlasnika psa kao String vrednost.
      */
     public void setKontaktVlasnika(String kontaktVlasnika) {
+    	if(kontaktVlasnika==null) {
+    		throw new NullPointerException("Kontakt vlasnika ne sme biti null.");
+    	}
         this.kontaktVlasnika = kontaktVlasnika;
     }
 
@@ -278,6 +288,9 @@ public class ZahtevZaTrazenjePsa implements IOpstiDomenskiObjekat{
      * @param rasa Rasa izgubljenog psa kao Rasa.
      */
     public void setRasa(Rasa rasa) {
+    	if(rasa==null) {
+    		throw new NullPointerException("Rasa ne sme biti null.");
+    	}
         this.rasa = rasa;
     }
 
@@ -287,6 +300,7 @@ public class ZahtevZaTrazenjePsa implements IOpstiDomenskiObjekat{
      * @return Lokacija izgubljenog psa kao Lokacija.
      */
     public Lokacija getLokacija() {
+    	
         return lokacija;
     }
 
@@ -296,6 +310,9 @@ public class ZahtevZaTrazenjePsa implements IOpstiDomenskiObjekat{
      * @param lokacija Lokacija izgubljenog psa kao Lokacija.
      */
     public void setLokacija(Lokacija lokacija) {
+    	if(lokacija==null) {
+    		throw new NullPointerException("Lokacija ne sme biti null.");
+    	}
         this.lokacija = lokacija;
     }
 

@@ -143,6 +143,9 @@ public class PrijavaPronalaskaPsa implements IOpstiDomenskiObjekat {
      * @param pol Pol pronadjenog psa kao Enum vrednost.
      */
     public void setPol(EnumPol pol) {
+    	if(pol==null) {
+    		throw new NullPointerException("Pol ne sme biti null.");
+    	}
         this.pol = pol;
     }
 
@@ -179,6 +182,9 @@ public class PrijavaPronalaskaPsa implements IOpstiDomenskiObjekat {
      * @param vremePronalaska Vreme pronalaska psa kao Date.
      */
     public void setVremePronalaska(Date vremePronalaska) {
+    	if(vremePronalaska==null) {
+    		throw new NullPointerException("Vreme pronalaska ne sme biti null.");
+    	}
         this.vremePronalaska = vremePronalaska;
     }
 
@@ -197,6 +203,9 @@ public class PrijavaPronalaskaPsa implements IOpstiDomenskiObjekat {
      * @param kontaktNalazaca Kontakt pronalazaca psa kao String vrednost.
      */
     public void setKontaktNalazaca(String kontaktNalazaca) {
+    	if(kontaktNalazaca==null) {
+    		throw new NullPointerException("Kontakt nalazaca ne sme biti null.");
+    	}
         this.kontaktNalazaca = kontaktNalazaca;
     }
 
@@ -233,6 +242,9 @@ public class PrijavaPronalaskaPsa implements IOpstiDomenskiObjekat {
      * @param rasa Rasa pronadjenog psa kao Rasa.
      */
     public void setRasa(Rasa rasa) {
+    	if(rasa==null) {
+    		throw new NullPointerException("Rasa ne sme biti null.");
+    	}
         this.rasa = rasa;
     }
 
@@ -251,6 +263,9 @@ public class PrijavaPronalaskaPsa implements IOpstiDomenskiObjekat {
      * @param lokacija Lokacija pronadjenog psa kao Lokacija.
      */
     public void setLokacija(Lokacija lokacija) {
+    	if(lokacija==null) {
+    		throw new NullPointerException("Lokacija ne sme biti null.");
+    	}
         this.lokacija = lokacija;
     }
 

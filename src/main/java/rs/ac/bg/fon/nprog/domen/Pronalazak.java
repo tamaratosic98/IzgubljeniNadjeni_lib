@@ -76,6 +76,9 @@ public class Pronalazak implements IOpstiDomenskiObjekat {
      * @param prijavaPronalaskaPsa Prijava pronalaska psa kao PrijavaPronalaskaPsa.
      */
     public void setPrijavaPronalaskaPsa(PrijavaPronalaskaPsa prijavaPronalaskaPsa) {
+    	if(prijavaPronalaskaPsa==null) {
+    		throw new NullPointerException("Prijava ne sme biti null.");
+    	}
         this.prijavaPronalaskaPsa = prijavaPronalaskaPsa;
     }
 
@@ -94,6 +97,9 @@ public class Pronalazak implements IOpstiDomenskiObjekat {
      * @param zahtevZaTrazenjePsa Zahtev za trazenje psa kao ZahtevZaTrazenjePsa.
      */
     public void setZahtevZaTrazenjePsa(ZahtevZaTrazenjePsa zahtevZaTrazenjePsa) {
+    	if(zahtevZaTrazenjePsa==null) {
+    		throw new NullPointerException("Zahtev ne sme biti null.");
+    	}
         this.zahtevZaTrazenjePsa = zahtevZaTrazenjePsa;
     }
 
