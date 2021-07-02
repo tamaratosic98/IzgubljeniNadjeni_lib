@@ -164,6 +164,12 @@ public class Korisnik implements IOpstiDomenskiObjekat{
      * @param ime Ime korisnika kao String vrednost.
      */
     public void setIme(String ime) {
+    	if(ime==null) {
+    		throw new NullPointerException("Ime ne sme biti null.");
+    	}
+    	if(ime.isEmpty()) {
+    		throw new RuntimeException("Ime ne sme biti prazan string.");
+    	}
         this.ime = ime;
     }
 
@@ -182,6 +188,12 @@ public class Korisnik implements IOpstiDomenskiObjekat{
      * @param prezime Prezime korisnika kao String vrednost.
      */
     public void setPrezime(String prezime) {
+    	if(prezime==null) {
+    		throw new NullPointerException("Prezime ne sme biti null.");
+    	}
+    	if(prezime.isEmpty()) {
+    		throw new RuntimeException("Prezime ne sme biti prazan string.");
+    	}
         this.prezime = prezime;
     }
 
@@ -200,6 +212,12 @@ public class Korisnik implements IOpstiDomenskiObjekat{
      * @param telefon Telefon korisnika kao String vrednost.
      */
     public void setTelefon(String telefon) {
+    	if(telefon==null) {
+    		throw new NullPointerException("Telefon ne sme biti null.");
+    	}
+    	if(telefon.isEmpty()) {
+    		throw new RuntimeException("Telefon ne sme biti prazan string.");
+    	}
         this.telefon = telefon;
     }
 
@@ -218,6 +236,12 @@ public class Korisnik implements IOpstiDomenskiObjekat{
      * @param email Email korisnika kao String vrednost.
      */
     public void setEmail(String email) {
+    	if(email==null) {
+    		throw new NullPointerException("Email ne sme biti null.");
+    	}
+    	if(email.isEmpty()) {
+    		throw new RuntimeException("Email ne sme biti prazan string.");
+    	}
         this.email = email;
     }
 
@@ -227,6 +251,7 @@ public class Korisnik implements IOpstiDomenskiObjekat{
      * @return Lozinka korisnika kao String vrednost.
      */
     public String getLozinka() {
+    	
         return lozinka;
     }
 
@@ -236,6 +261,12 @@ public class Korisnik implements IOpstiDomenskiObjekat{
      * @param lozinka Lozinka korisnika kao String vrednost.
      */
     public void setLozinka(String lozinka) {
+    	if(lozinka==null) {
+    		throw new NullPointerException("Lozinka ne sme biti null.");
+    	}
+    	if(lozinka.isEmpty()) {
+    		throw new RuntimeException("Lozinka ne sme biti prazan string.");
+    	}
         this.lozinka = lozinka;
     }
 
