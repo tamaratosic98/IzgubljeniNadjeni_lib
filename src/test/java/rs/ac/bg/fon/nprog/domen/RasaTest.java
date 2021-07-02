@@ -44,6 +44,11 @@ class RasaTest extends IOpstiDomenskiObjekatTest {
 		assertEquals("Skotski terijer",rasa.getNaziv());
 	}
 	@Test
+	void testSetSlikaURL() {
+		rasa.setSlikaURL("/slika.jpg");
+		assertEquals("/slika.jpg",rasa.getSlikaURL());
+	}
+	@Test
 	void testSetNazivNijeKratak() {
 		assertThrows(java.lang.RuntimeException.class, ()->rasa.setNaziv("T"));
 	}
