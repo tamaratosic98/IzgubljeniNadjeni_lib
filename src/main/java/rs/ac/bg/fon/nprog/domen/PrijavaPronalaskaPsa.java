@@ -321,18 +321,44 @@ public class PrijavaPronalaskaPsa implements IOpstiDomenskiObjekat {
     public List<IOpstiDomenskiObjekat> ucitajListu(ResultSet rs) throws SQLException {
         List<IOpstiDomenskiObjekat> lista=new ArrayList<>();
         while(rs.next()){
-            Lokacija l=new Lokacija(rs.getLong("lokacijaId"),rs.getString("nazivLokacije"));
-            Rasa r = new Rasa(rs.getLong("rasaId"), rs.getString("nazivRase"), rs.getString("slikaURLRase"));
+            Lokacija l=new Lokacija();
+            l.setLokacijaId(rs.getLong("lokacijaId"));
+            if(rs.getString("nazivLokacije")!=null) {
+            	l.setNaziv(rs.getString("nazivLokacije"));
+            }
+            Rasa r = new Rasa();
+            r.setRasaId(rs.getLong("rasaId"));
+            if(rs.getString("nazivRase")!=null) {
+            	r.setNaziv(rs.getString("nazivRase"));
+            }
+            
+            r.setSlikaURL(rs.getString("slikaURLRase"));
             Korisnik k = new Korisnik(rs.getLong("k.korisnikId"),rs.getString("k.ime"),rs.getString("k.prezime"), 
                                       rs.getString("k.telefon"), rs.getString("k.email"), rs.getString("k.lozinka"));  
-            PrijavaPronalaskaPsa ppp=new PrijavaPronalaskaPsa(rs.getInt("prijavaPronalaskaPsaId"), 
-                                    EnumPol.valueOf(rs.getString("polPronadjenog")), 
-                                    rs.getString("bojaPronadjenog"), 
-                                    new Date(rs.getTimestamp("vremePronalaska").getTime()), 
-                                    rs.getString("kontaktNalazaca"), 
-                                    new ImageIcon(rs.getString("slikaURLPronadjenog")), r, l, 
-                                    rs.getDouble("xKoordinata"), rs.getDouble("yKoordinata"),
-                                    rs.getString("opisLokacije"),k);
+            PrijavaPronalaskaPsa ppp=new PrijavaPronalaskaPsa();
+            ppp.setPrijavaPronalaskaPsaId(rs.getInt("prijavaPronalaskaPsaId"));
+            if(rs.getString("polPronadjenog")!=null) {
+            	 ppp.setPol(EnumPol.valueOf(rs.getString("polPronadjenog")));
+            }
+            ppp.setBoja(rs.getString("bojaPronadjenog"));
+            if(rs.getTimestamp("vremePronalaska")!=null) {
+            	ppp.setVremePronalaska(new Date(rs.getTimestamp("vremePronalaska").getTime()));
+            }
+            if(rs.getString("kontaktNalazaca")!=null) {
+            	 ppp.setKontaktNalazaca(rs.getString("kontaktNalazaca"));
+            }
+            ppp.setSlikaURL( new ImageIcon(rs.getString("slikaURLPronadjenog")));
+            if(r!=null) {
+            	ppp.setRasa(r);
+            }
+            if(l!=null) {
+            	ppp.setLokacija(l);
+            }
+            
+            ppp.setX(rs.getDouble("xKoordinata"));
+            ppp.setY(rs.getDouble("yKoordinata"));
+            ppp.setOpis(rs.getString("opisLokacije"));
+            ppp.setSacuvaoPronalazak(k);
             lista.add(ppp);
         }
         return lista;
@@ -351,21 +377,30 @@ public class PrijavaPronalaskaPsa implements IOpstiDomenskiObjekat {
 
     @Override
     public String vrednostiInsert() {
-          return getPrijavaPronalaskaPsaId()+", '"+getPol()+"','"
-               +getBoja()+"','"
-               + new java.sql.Timestamp((getVremePronalaska()).getTime())+"','"
-               +getKontaktNalazaca()+"','"
-               +getSlikaURL().getDescription()+"',"
-               +getRasa().getRasaId()+","
-               +getLokacija().getLokacijaId()+", "
-               +getX()+", "
-               +getY()+", '"
-               +getOpis()+"', "
-               +getSacuvaoPronalazak().getKorisnikId()+" ";
+    	
+          if(this!=null && getSlikaURL()!=null && getRasa()!=null && getLokacija()!=null && getSacuvaoPronalazak()!=null && getVremePronalaska()!=null && getPol()!=null) {
+        	  return getPrijavaPronalaskaPsaId()+", '"+getPol()+"','"
+                      +getBoja()+"','"
+                      + new java.sql.Timestamp((getVremePronalaska()).getTime())+"','"
+                      +getKontaktNalazaca()+"','"
+                      +getSlikaURL().getDescription()+"',"
+                      +getRasa().getRasaId()+","
+                      +getLokacija().getLokacijaId()+", "
+                      +getX()+", "
+                      +getY()+", '"
+                      +getOpis()+"', "
+                      +getSacuvaoPronalazak().getKorisnikId()+" ";
+          }else {
+        	  System.out.println("Greska");
+        	  return "";
+          }
+         
+    	 
     }
 
     @Override
     public String vrednostiUpdate() {
+    	if(this!=null && getSlikaURL()!=null && getRasa()!=null && getLokacija()!=null && getSacuvaoPronalazak()!=null && getVremePronalaska()!=null && getPol()!=null) {
         return " polPronadjenog='"+getPol()+"', bojaPronadjenog='"
                +getBoja()+"', vremePronalaska='"
                + new java.sql.Timestamp((getVremePronalaska()).getTime())+"', kontaktNalazaca='"
@@ -377,6 +412,10 @@ public class PrijavaPronalaskaPsa implements IOpstiDomenskiObjekat {
                +", yKoordinata="+getY()
                +", opisLokacije='"+getOpis()+"', korisnikId="
                +getSacuvaoPronalazak().getKorisnikId()+" ";
+    	}else {
+      	  System.out.println("Greska");
+      	  return "";
+        }
     }
 
     @Override

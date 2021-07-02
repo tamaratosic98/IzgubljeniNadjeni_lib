@@ -2,6 +2,7 @@ package rs.ac.bg.fon.nprog.domen;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 import javax.swing.ImageIcon;
@@ -35,7 +36,9 @@ class PrijavaPronalaskaPsaTest extends IOpstiDomenskiObjekatTest {
 		Rasa r = new Rasa(1,"rasa","/");
 		Lokacija l = new Lokacija(1,"lokacija");
 		Korisnik k = new Korisnik(123, "Tamara", "Tosic", "123456","tamara@test.com","lozinka");
-		prijavaPronalaskaPsa= new PrijavaPronalaskaPsa(1,EnumPol.MUŠKI,"",new Date(),"bela",new ImageIcon(),r, l, 1.0,1.0,"opis",k);
+		ImageIcon slika=new ImageIcon();
+		slika.setDescription("opis");
+		prijavaPronalaskaPsa= new PrijavaPronalaskaPsa(1,EnumPol.MUŠKI,"",new Date(),"bela",slika,r, l, 1.0,1.0,"opis",k);
 		assertNotNull(prijavaPronalaskaPsa);
 	}
 
@@ -84,6 +87,7 @@ class PrijavaPronalaskaPsaTest extends IOpstiDomenskiObjekatTest {
 	@Test
 	void testSetSlikaURL() {
 		ImageIcon slika=new ImageIcon();
+		slika.setDescription("opis");
 		prijavaPronalaskaPsa.setSlikaURL(slika);
 		assertEquals(slika, prijavaPronalaskaPsa.getSlikaURL());
 	}

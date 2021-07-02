@@ -366,20 +366,46 @@ public class ZahtevZaTrazenjePsa implements IOpstiDomenskiObjekat{
     public List<IOpstiDomenskiObjekat> ucitajListu(ResultSet rs) throws SQLException {
          List<IOpstiDomenskiObjekat> lista=new ArrayList<>();
         while(rs.next()){
-            Lokacija l=new Lokacija(rs.getLong("lokacijaId"),rs.getString("nazivLokacije"));
-            Rasa r = new Rasa(rs.getLong("rasaId"), rs.getString("nazivRase"), rs.getString("slikaURLRase"));
+            Lokacija l=new Lokacija();
+            l.setLokacijaId(rs.getLong("lokacijaId"));
+            if(rs.getString("nazivLokacije")!=null) {
+            	l.setNaziv(rs.getString("nazivLokacije"));
+            }
+            Rasa r = new Rasa();
+            r.setRasaId(rs.getLong("rasaId"));
+            if(rs.getString("nazivRase")!=null) {
+            	r.setNaziv(rs.getString("nazivRase"));
+            }
+            
+            r.setSlikaURL(rs.getString("slikaURLRase"));
             Korisnik k = new Korisnik(rs.getLong("k.korisnikId"),rs.getString("k.ime"),rs.getString("k.prezime"), 
                                       rs.getString("k.telefon"), rs.getString("k.email"), rs.getString("k.lozinka"));    
-            ZahtevZaTrazenjePsa zztp=new ZahtevZaTrazenjePsa(rs.getInt("zahtevZaTrazenjePsaId"), 
-                                        EnumPol.valueOf(rs.getString("polIzgubljenog")), 
-                                        rs.getString("bojaIzgubljenog"), 
-                                        new Date(rs.getTimestamp("vremeNestanka").getTime()), 
-                                        rs.getString("kontaktVlasnika"), 
-                                        new ImageIcon(rs.getString("slikaURLIzgubljenog")),
-                                        rs.getInt("starost"),
-                                        rs.getString("ime"), r, l,
-                                        rs.getDouble("xKoordinata"), rs.getDouble("yKoordinata"),
-                                        rs.getString("opisLokacije"),k);
+            ZahtevZaTrazenjePsa zztp=new ZahtevZaTrazenjePsa();
+            zztp.setZahtevZaTrazenjePsaId(rs.getInt("zahtevZaTrazenjePsaId"));
+            if(rs.getString("polIzgubljenog")!=null) {
+            	zztp.setPol(EnumPol.valueOf(rs.getString("polIzgubljenog")));
+            }
+            zztp.setBoja(rs.getString("bojaIzgubljenog"));
+            if(rs.getTimestamp("vremeNestanka")!=null) {
+            	zztp.setVremeNestanka(new Date(rs.getTimestamp("vremeNestanka").getTime()));
+            }
+            if(rs.getString("kontaktVlasnika")!=null) {
+            	zztp.setKontaktVlasnika(rs.getString("kontaktVlasnika"));
+            }
+            zztp.setSlikaURL(new ImageIcon(rs.getString("slikaURLIzgubljenog")));
+            zztp.setStarost( rs.getInt("starost"));
+            zztp.setIme( rs.getString("ime"));
+            if(r!=null) {
+            	zztp.setRasa(r);
+            }
+            if(l!=null) {
+            	zztp.setLokacija(l);
+            }
+            zztp.setX(rs.getDouble("xKoordinata"));
+            zztp.setY(rs.getDouble("yKoordinata"));
+            zztp.setOpis(rs.getString("opisLokacije"));
+            zztp.setSacuvaoZahtev(k);
+            
             lista.add(zztp);
         }
         return lista;
@@ -398,35 +424,43 @@ public class ZahtevZaTrazenjePsa implements IOpstiDomenskiObjekat{
 
     @Override
     public String vrednostiInsert() {
-       return "'"+getPol()+"','"
-               +getBoja()+"','"
-               +new java.sql.Timestamp((getVremeNestanka()).getTime())+"','"
-               +getKontaktVlasnika()+"','"
-               +getSlikaURL().getDescription()+"',"
-               +getStarost()+",'"
-               +getIme()+"', "
-               +getRasa().getRasaId()+", "
-               +getLokacija().getLokacijaId()+", "
-               +getX()+", "
-               +getY()+", '"
-               +getOpis()+"', "
-               +getSacuvaoZahtev().getKorisnikId()+" ";
+    	if(this!=null && getSlikaURL()!=null && getRasa()!=null && getLokacija()!=null && getSacuvaoZahtev()!=null && getVremeNestanka()!=null && getPol()!=null) {
+	       return "'"+getPol()+"','"
+	               +getBoja()+"','"
+	               +new java.sql.Timestamp((getVremeNestanka()).getTime())+"','"
+	               +getKontaktVlasnika()+"','"
+	               +getSlikaURL().getDescription()+"',"
+	               +getStarost()+",'"
+	               +getIme()+"', "
+	               +getRasa().getRasaId()+", "
+	               +getLokacija().getLokacijaId()+", "
+	               +getX()+", "
+	               +getY()+", '"
+	               +getOpis()+"', "
+	               +getSacuvaoZahtev().getKorisnikId()+" ";
+    	}else {
+    		return "";
+    	}
                
     }
 
     @Override
     public String vrednostiUpdate() {
-        return " polIzgubljenog='"+getPol()+"', bojaIzgubljenog='"
-               +getBoja()+"',vremeNestanka='"
-               +new java.sql.Timestamp((getVremeNestanka()).getTime())+"', kontaktVlasnika='"
-               +getKontaktVlasnika()+"', slikaURLIzgubljenog='"
-               +getSlikaURL().getDescription()+"', starost="
-               +getStarost()+", ime='"
-               +getIme()+"', rasaId="
-               +getRasa().getRasaId()+", lokacijaId="
-               +getLokacija().getLokacijaId()+ ", xKoordinata="
-               +getX()+", yKoordinata="+getY()+", opisLokacije='"+getOpis()+"', korisnikId="
-               +getSacuvaoZahtev().getKorisnikId()+" ";
+    	if(this!=null && getSlikaURL()!=null && getRasa()!=null && getLokacija()!=null && getSacuvaoZahtev()!=null && getVremeNestanka()!=null && getPol()!=null) {
+	        return " polIzgubljenog='"+getPol()+"', bojaIzgubljenog='"
+	               +getBoja()+"',vremeNestanka='"
+	               +new java.sql.Timestamp((getVremeNestanka()).getTime())+"', kontaktVlasnika='"
+	               +getKontaktVlasnika()+"', slikaURLIzgubljenog='"
+	               +getSlikaURL().getDescription()+"', starost="
+	               +getStarost()+", ime='"
+	               +getIme()+"', rasaId="
+	               +getRasa().getRasaId()+", lokacijaId="
+	               +getLokacija().getLokacijaId()+ ", xKoordinata="
+	               +getX()+", yKoordinata="+getY()+", opisLokacije='"+getOpis()+"', korisnikId="
+	               +getSacuvaoZahtev().getKorisnikId()+" ";
+    	}else {
+    		return "";
+    	}
     }
 
     @Override
