@@ -162,6 +162,8 @@ public class Korisnik implements IOpstiDomenskiObjekat{
      * Postavlja ime korisnika na novu vrednost.
      * 
      * @param ime Ime korisnika kao String vrednost.
+     * @throws java.lang.RuntimeException ukoliko je ime prazan string.
+     * @throws java.lang.NullPointerException ukoliko je ime null.
      */
     public void setIme(String ime) {
     	if(ime==null) {
@@ -186,6 +188,8 @@ public class Korisnik implements IOpstiDomenskiObjekat{
      * Postavlja prezime korisnika na novu vrednost.
      * 
      * @param prezime Prezime korisnika kao String vrednost.
+     * @throws java.lang.RuntimeException ukoliko je prezime prazan string.
+     * @throws java.lang.NullPointerException ukoliko je prezime null.
      */
     public void setPrezime(String prezime) {
     	if(prezime==null) {
@@ -210,6 +214,8 @@ public class Korisnik implements IOpstiDomenskiObjekat{
      * Postavlja telefon korisnika na novu vrednost.
      * 
      * @param telefon Telefon korisnika kao String vrednost.
+     * @throws java.lang.RuntimeException ukoliko je telefon prazan string.
+     * @throws java.lang.NullPointerException ukoliko je telefon null.
      */
     public void setTelefon(String telefon) {
     	if(telefon==null) {
@@ -234,6 +240,8 @@ public class Korisnik implements IOpstiDomenskiObjekat{
      * Postavlja email korisnika na novu vrednost.
      * 
      * @param email Email korisnika kao String vrednost.
+     * @throws java.lang.RuntimeException ukoliko je email prazan string.
+     * @throws java.lang.NullPointerException ukoliko je email null.
      */
     public void setEmail(String email) {
     	if(email==null) {
@@ -259,6 +267,8 @@ public class Korisnik implements IOpstiDomenskiObjekat{
      * Postavlja lozinku korisnika na novu vrednost.
      * 
      * @param lozinka Lozinka korisnika kao String vrednost.
+     * @throws java.lang.RuntimeException ukoliko je lozinka prazan string.
+     * @throws java.lang.NullPointerException ukoliko je lozinka null.
      */
     public void setLozinka(String lozinka) {
     	if(lozinka==null) {
