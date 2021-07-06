@@ -151,6 +151,7 @@ public class ZahtevZaTrazenjePsa implements IOpstiDomenskiObjekat{
      * Postavlja pol izgubljenog psa na novu vrednost.
      * 
      * @param pol Pol izgubljenog psa kao Enum vrednost.
+     * @throws java.lang.NullPointerException ukoliko je pol null.
      */
     public void setPol(EnumPol pol) {
     	if(pol==null) {
@@ -190,6 +191,7 @@ public class ZahtevZaTrazenjePsa implements IOpstiDomenskiObjekat{
      * Postavlja vreme nestanka psa na novu vrednost.
      * 
      * @param vremeNestanka Vreme nestanka psa kao Date.
+     * @throws java.lang.NullPointerException ukoliko je vreme nestanka null.
      */
     public void setVremeNestanka(Date vremeNestanka) {
     	if(vremeNestanka==null) {
@@ -211,6 +213,7 @@ public class ZahtevZaTrazenjePsa implements IOpstiDomenskiObjekat{
      * Postavlja kontakt vlasnika izgubljenog psa na novu vrednost.
      * 
      * @param kontaktVlasnika Kontakt vlasnika psa kao String vrednost.
+     * @throws java.lang.NullPointerException ukoliko je kontakt vlasnika null.
      */
     public void setKontaktVlasnika(String kontaktVlasnika) {
     	if(kontaktVlasnika==null) {
@@ -286,6 +289,7 @@ public class ZahtevZaTrazenjePsa implements IOpstiDomenskiObjekat{
      * Postavlja rasu izgubljenog psa na novu vrednost.
      * 
      * @param rasa Rasa izgubljenog psa kao Rasa.
+     * @throws java.lang.NullPointerException ukoliko je rasa null.
      */
     public void setRasa(Rasa rasa) {
     	if(rasa==null) {
@@ -308,6 +312,7 @@ public class ZahtevZaTrazenjePsa implements IOpstiDomenskiObjekat{
      * Postavlja lokaciju izgubljeno psa na novu vrednost.
      * 
      * @param lokacija Lokacija izgubljenog psa kao Lokacija.
+     * @throws java.lang.NullPointerException ukoliko je lokacija null.
      */
     public void setLokacija(Lokacija lokacija) {
     	if(lokacija==null) {

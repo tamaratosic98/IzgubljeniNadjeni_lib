@@ -75,6 +75,7 @@ public class Lokacija implements IOpstiDomenskiObjekat{
      * Postavlja naziv lokacije na novu vrednost.
      * 
      * @param naziv Naziv lokacije kao String vrednost.
+     * @throws java.lang.RuntimeException ukoliko je naziv nije duzi od 1 znaka.
      */
     public void setNaziv(String naziv) {
     	if(naziv.length() <= 1) {

@@ -80,6 +80,7 @@ public class Rasa implements IOpstiDomenskiObjekat{
      * Postavlja naziv rase na novu vrednost.
      * 
      * @param naziv Naziv rase kao String vrednost.
+     * @throws java.lang.RuntimeException ukoliko je naziv nije duzi od 1 znaka.
      */
     public void setNaziv(String naziv) {
     	if(naziv.length() <= 1) {
